@@ -1,2 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Collections
+//Collecion de String
+
+var coches = new List<string>();
+coches.Add("Ford");
+coches.Add("BMW");
+coches.Add("Peugeot");
+
+foreach (var co in coches) {
+    Console.Write(co + " ");
+}
