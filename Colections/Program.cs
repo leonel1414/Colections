@@ -104,15 +104,20 @@ class Car : IComparable<Car>{
 
 public class MisColores : System.Collections.IEnumerable
 {
-    Colores[] _colors = {
+    Colores[] _colores = {
      new Colores(){Nombre = "Azul" },
      new Colores(){Nombre = "Rojo" },
      new Colores(){Nombre = "Verde" },
     };
     public System.Collections.IEnumerable GetEnumerator(){
         
-        return new ColoresEnumerator(_colors);
+        return new ColoresEnumerator(_colores);
     
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        throw new NotImplementedException();
     }
 }
 
