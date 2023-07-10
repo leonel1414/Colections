@@ -21,6 +21,7 @@ var coches2 = new List<string> {"Seat", "Wolkswager", "Fiar"};
 
 */
 
+/*
 List<Elemento> elemento = CrearLista();
 
 var query = from el in elemento where el.NumeroAtomico < 20
@@ -46,4 +47,24 @@ public class Elemento {
     public string Simbolo { get; set;}
     public string Nombre { get; set;}
     public int NumeroAtomico { get; set;}
+}*/
+static void ListarCoches() {
+    var cars = new List<Car> {
+        {new Car() {Name = "car1", Color = "blue", Speed = 20} },
+        {new Car() {Name = "car2", Color = "red", Speed = 10} },
+        {new Car() {Name = "car3", Color = "green", Speed = 50} },
+        {new Car() {Name = "car4", Color = "blue", Speed = 40} },
+        {new Car() {Name = "car5", Color = "yellow", Speed = 30} },
+        {new Car() {Name = "car6", Color = "blue", Speed = 20} }
+    };
+}
+
+
+
+public class Car {
+    public string Name { get; set; }
+    public string Color { get; set; }
+    public int Speed { get; set; }
+
+
 }
