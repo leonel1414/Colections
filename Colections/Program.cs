@@ -1,6 +1,10 @@
 ﻿// Collections
 //Collecion de String
 
+using System.Collections;
+using System.Collections.Generic;
+
+
 /*
 var coches = new List<string>();
 coches.Add("Ford");
@@ -47,7 +51,7 @@ public class Elemento {
     public string Simbolo { get; set;}
     public string Nombre { get; set;}
     public int NumeroAtomico { get; set;}
-}*/
+}
 
 
 using System.Data.Common;
@@ -79,7 +83,7 @@ class Car : IComparable<Car>{
 
 
 
-    //iNTERFAZ
+
     public int CompareTo(Car? other)
     {
 
@@ -95,4 +99,23 @@ class Car : IComparable<Car>{
         return compare;
     }
 }
+*/
+//CLASE DE COLLECCION PERSONALIZADA
 
+public class MisColores : System.Collections.IEnumerable
+{
+    Colores[] _colors = {
+     new Colores(){Nombre = "Azul" },
+     new Colores(){Nombre = "Rojo" },
+     new Colores(){Nombre = "Verde" },
+    };
+    public System.Collections.IEnumerable GetEnumerator(){
+        
+        return new ColoresEnumerator(_colors);
+    
+    }
+}
+
+public class Colores {
+   public string Nombre { get; set; }
+}
