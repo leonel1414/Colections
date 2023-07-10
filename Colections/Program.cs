@@ -24,9 +24,10 @@ var coches2 = new List<string> {"Seat", "Wolkswager", "Fiar"};
 List<Elemento> elemento = CrearLista();
 
 var query = from el in elemento where el.NumeroAtomico < 20
+            //el.NumeroAtomico > 20
             select el;
 
-foreach (Elemento el in elemento) {
+foreach (Elemento el in query) {
     Console.WriteLine($"Nombre: {el.Nombre}, Simbolo: {el.Simbolo}, Numero Atomico: {el.NumeroAtomico}");
 }
 
