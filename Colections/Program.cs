@@ -48,15 +48,23 @@ public class Elemento {
     public string Nombre { get; set;}
     public int NumeroAtomico { get; set;}
 }*/
+
+
+ListarCoches();
 static void ListarCoches() {
     var cars = new List<Car> {
-        {new Car() {Name = "car1", Color = "blue", Speed = 20} },
-        {new Car() {Name = "car2", Color = "red", Speed = 10} },
-        {new Car() {Name = "car3", Color = "green", Speed = 50} },
-        {new Car() {Name = "car4", Color = "blue", Speed = 40} },
-        {new Car() {Name = "car5", Color = "yellow", Speed = 30} },
-        {new Car() {Name = "car6", Color = "blue", Speed = 20} }
+        {new Car() {Name = "car6", Color = "blue", Speed = 20} },
+        {new Car() {Name = "car3", Color = "red", Speed = 10} },
+        {new Car() {Name = "car4", Color = "green", Speed = 50} },
+        {new Car() {Name = "car5", Color = "blue", Speed = 40} },
+        {new Car() {Name = "car2", Color = "yellow", Speed = 30} },
+        {new Car() {Name = "car1", Color = "blue", Speed = 20} }
     };
+    cars.Sort();
+    foreach (Car car in cars) {
+    Console.WriteLine($"Nombre: {car.Name}, Color: {car.Color}, Velocidad: {car.Speed}");
+    
+    }
 }
 
 
@@ -66,5 +74,5 @@ public class Car {
     public string Color { get; set; }
     public int Speed { get; set; }
 
-
+    
 }
