@@ -50,6 +50,9 @@ public class Elemento {
 }*/
 
 
+using System.Data.Common;
+using System.Runtime.CompilerServices;
+
 ListarCoches();
 static void ListarCoches() {
     var cars = new List<Car> {
@@ -69,10 +72,27 @@ static void ListarCoches() {
 
 
 
-public class Car {
+class Car : IComparable<Car>{
     public string Name { get; set; }
     public string Color { get; set; }
     public int Speed { get; set; }
 
-    
+
+
+    //iNTERFAZ
+    public int CompareTo(Car? other)
+    {
+
+        int compare;
+        compare = String.Compare(this.Name, other.Name, true);
+
+        if (compare == 0)
+        {
+            compare= this.Name.CompareTo(other.Name);
+            compare = -compare;
+        }
+        //throw new NotImplementedException();
+        return compare;
+    }
 }
+
